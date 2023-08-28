@@ -80,7 +80,6 @@ export default function Stable_Diffusion() {
                   minWidth: "min(160px, 100%)",
                   borderWidth: "2px",
                   gap: "2px",
-                  border:"2px solid black"
                 }}
               >
                 <div
