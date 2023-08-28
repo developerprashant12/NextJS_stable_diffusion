@@ -133,6 +133,8 @@ span.svelte-1gfkn6j {
     font-weight: var(--block-title-text-weight);
     font-size: var(--block-title-text-size);
     line-height: var(--line-sm);
+    color: slategray;
+    font-size: 15px;
 }
 
 input[type=number].svelte-1cl284s {
@@ -149,6 +151,8 @@ input[type=number].svelte-1cl284s {
     font-size: var(--input-text-size);
     line-height: var(--line-sm);
     text-align: center;
+    border: 1px solid #cfc8c8d1;
+    border-radius: 8px;
 }
 
 input[type=range].svelte-1cl284s {
@@ -198,4 +202,88 @@ div.svelte-sfqy0y {
     border-radius: var(--block-radius);
     background: var(--border-color-primary);
     overflow-y: hidden;
+}
+
+.lg.svelte-cmf5ev {
+    border-radius: var(--button-large-radius);
+    padding: var(--button-large-padding);
+    font-weight: var(--button-large-text-weight);
+    font-size: var(--button-large-text-size);
+}
+
+.secondary.svelte-cmf5ev {
+    border: var(--button-border-width) solid var(--button-secondary-border-color);
+    background: var(--button-secondary-background-fill);
+    color: var(--button-secondary-text-color);
+}
+
+div.svelte-15lo0d8>*,
+div.svelte-15lo0d8>.form>* {
+    flex: 1 1 0%;
+    flex-wrap: wrap;
+    min-width: min(160px, 100%);
+}
+
+button.svelte-cmf5ev,
+a.svelte-cmf5ev {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--button-transition);
+    box-shadow: var(--button-shadow);
+    padding: var(--size-0-5) var(--size-2);
+    text-align: center;
+}
+
+.gradio-container-3-40-1 button,
+.gradio-container-3-40-1 select {
+    text-transform: none;
+}
+
+.button-container {
+    display: flex;
+}
+
+.button {
+    flex: 1;
+    margin: 0 5px;
+    background-color: lightgray;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+/* Add this CSS to your stylesheet */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.loading-spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #000;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+}
+
+.loading-spinner {
+    border: 4px solid rgba(73, 81, 204, 0.1);
+    border-top: 4px solid #693daf;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
 }
