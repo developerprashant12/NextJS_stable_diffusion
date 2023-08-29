@@ -114,305 +114,327 @@ export default function Stable_Diffusion() {
   };
 
   return (
-    <div>
-      <main className="flex min-h-full flex-col items-center mt-16">
+   <main>
+      <div className="flex min-h-full flex-col items-center mt-14">
         <h1 className="text-4xl font-bold">Stable Diffusion XL</h1>
-        <p className="text-sm text-gray-400 mt-7 mb-7">
+        <p className="text-sm text-gray-400 mt-5 mb-7 text-center">
           Due to the large number of users, the server may experience problems.
           If you encounter an error, please try again.
         </p>
-      </main>
-      <div
-        className="grid grid-rows-2 grid-flow-col gap-4"
-        style={{ margin: "0px 80px 0px 80px" }}
-      >
-        {/* First Part with first section */}
-        <div className="prose  svelte-1ybaih5">
-          Stable Diffusion XL Online.
-          <a
-            href="http://stablediffusionweb.com"
-            target="_blank"
-            className="text-blue-500"
-          >
-            https://stabled.netlify.app
-          </a>
-        </div>
-        <div style={{ marginTop: "-390px", marginBottom: "100px" }}>
-          <div className="border p-4 rounded-md">
-            <div className="justify-between">
-              <p className="text-slate-500">Prompt</p>
-              <textarea
-                className="w-full p-2 border rounded-md mb-2 h-24 focus:border-blue-500 focus:outline-none"
-                placeholder="Enter your prompt..."
-                onChange={handlePrompt}
-                value={prompt}
-              ></textarea>
-              <p className="text-slate-500">Negative Prompt</p>
-              <textarea
-                className="w-full p-2 border rounded-md mb-2 h-24 focus:border-blue-500 focus:outline-none"
-                placeholder="Enter your Negative prompt..."
-                onChange={handleNPrompt}
-                value={Nprompt}
-              ></textarea>
-            </div>
-          </div>
-
-          {/* First Section */}
-          <div id="component-7" className="svelte-15lo0d8 stretch">
-            <div
-              className="form svelte-sfqy0y mt-8 flex justify-between"
-              style={{ flexGrow: 2, minWidth: "min(320px, 100%)" }}
+      </div>
+      <div className="flex flex-col md:flex-row">
+        {/* FirstBox */}
+        <div className="w-full md:w-1/2 p-4">
+          <div className="prose  svelte-1ybaih5">
+            Stable Diffusion XL Online.
+            <a
+              href="http://stablediffusionweb.com"
+              target="_blank"
+              className="text-blue-500"
             >
+              https://stabled.netlify.app
+            </a>
+          </div>
+          <div style={{ marginBottom: "100px", marginTop:"20px" }}>
+            <div className="border p-4 rounded-md">
+              <div className="justify-between">
+                <p className="text-slate-500">Prompt</p>
+                <textarea
+                  className="w-full p-2 border rounded-md mb-2 h-24 focus:border-blue-500 focus:outline-none"
+                  placeholder="Enter your prompt..."
+                  onChange={handlePrompt}
+                  value={prompt}
+                ></textarea>
+                <p className="text-slate-500">Negative Prompt</p>
+                <textarea
+                  className="w-full p-2 border rounded-md mb-2 h-24 focus:border-blue-500 focus:outline-none"
+                  placeholder="Enter your Negative prompt..."
+                  onChange={handleNPrompt}
+                  value={Nprompt}
+                ></textarea>
+              </div>
+            </div>
+
+            {/* First Section */}
+            <div id="component-7" className="svelte-15lo0d8 stretch">
               <div
-                id="component-8"
-                className="svelte-90oupt border rounded-md p-2"
+                className="form svelte-sfqy0y mt-8 flex justify-between"
+                style={{ flexGrow: 2, minWidth: "min(320px, 100%)" }}
               >
                 <div
-                  className="wrap default full svelte-zlszon hide"
-                  style={{ position: "absolute", padding: "0px" }}
-                ></div>
+                  id="component-8"
+                  className="svelte-90oupt border rounded-md p-2"
+                  style={{ width: "-webkit-fill-available" }}
+                >
+                  <div
+                    className="wrap default full svelte-zlszon hide"
+                    style={{ position: "absolute", padding: "0px" }}
+                  ></div>
 
-                <div className="wrap svelte-1cl284s justify-between">
-                  <div className="head svelte-1cl284s ">
-                    <label htmlFor="range_id_0">
-                      <span data-testid="block-info" className="svelte-1gfkn6j">
-                        Height
-                      </span>
-                    </label>
-                    <input
-                      data-testid="number-input"
-                      type="number"
-                      min="512"
-                      max="1024"
-                      step="128"
-                      className="svelte-1cl284s"
+                  <div className="wrap svelte-1cl284s justify-between">
+                    <div className="head svelte-1cl284s ">
+                      <label htmlFor="range_id_0">
+                        <span
+                          data-testid="block-info"
+                          className="svelte-1gfkn6j"
+                        >
+                          Height
+                        </span>
+                      </label>
+                      <input
+                        data-testid="number-input"
+                        type="number"
+                        min="512"
+                        max="1024"
+                        step="128"
+                        className="svelte-1cl284s float-right border rounded-md"
+                          value={height}
+                          onChange={handleHeightChange}
+                      />
+                    </div>
+                  </div>
+
+                  <input
+                    type="range"
+                    name="cowbell"
+                    min="512"
+                    max="1024"
+                    step="128"
+                    className="svelte-1cl284s"
+                    style={{ width: "-webkit-fill-available" }}
                       value={height}
                       onChange={handleHeightChange}
-                    />
-                  </div>
+                  />
                 </div>
-
-                <input
-                  type="range"
-                  name="cowbell"
-                  min="512"
-                  max="1024"
-                  step="128"
-                  className="svelte-1cl284s"
-                  value={height}
-                  onChange={handleHeightChange}
-                />
-              </div>
-              <div
-                id="component-9"
-                className="svelte-90oupt border rounded-md p-2"
-              >
                 <div
-                  className="wrap default full svelte-zlszon hide"
-                  style={{ position: "absolute", padding: "0px" }}
-                ></div>
-                <div className="wrap svelte-1cl284s">
-                  <div className="head svelte-1cl284s">
-                    <label htmlFor="range_id_1">
-                      <span data-testid="block-info" className="svelte-1gfkn6j">
-                        Width
-                      </span>
-                    </label>
-                    <input
-                      data-testid="number-input"
-                      type="number"
-                      min="512"
-                      max="1024"
-                      step="128"
-                      className="svelte-1cl284s"
+                  id="component-9"
+                  className="svelte-90oupt border rounded-md p-2"
+                  style={{ width: "-webkit-fill-available" }}
+                >
+                  <div
+                    className="wrap default full svelte-zlszon hide"
+                    style={{ position: "absolute", padding: "0px" }}
+                  ></div>
+                  <div className="wrap svelte-1cl284s">
+                    <div className="head svelte-1cl284s">
+                      <label htmlFor="range_id_1">
+                        <span
+                          data-testid="block-info"
+                          className="svelte-1gfkn6j"
+                        >
+                          Width
+                        </span>
+                      </label>
+                      <input
+                        data-testid="number-input"
+                        type="number"
+                        min="512"
+                        max="1024"
+                        step="128"
+                        className="svelte-1cl284s float-right border rounded-md"
+                          value={width}
+                          onChange={handleWidthChange}
+                      />
+                    </div>
+                  </div>
+                  <input
+                    type="range"
+                    id="range_id_1"
+                    name="cowbell"
+                    min="512"
+                    max="1024"
+                    step="128"
+                    className="svelte-1cl284s"
                       value={width}
                       onChange={handleWidthChange}
-                    />
-                  </div>
+                    style={{ width: "-webkit-fill-available" }}
+                  />
                 </div>
-                <input
-                  type="range"
-                  id="range_id_1"
-                  name="cowbell"
-                  min="512"
-                  max="1024"
-                  step="128"
-                  className="svelte-1cl284s"
-                  value={width}
-                  onChange={handleWidthChange}
-                />
               </div>
             </div>
-          </div>
-          {/* First Section */}
+            {/* First Section */}
 
-          {/* Second Section */}
-          <div id="component-7" className="svelte-15lo0d8 stretch">
-            <div
-              className="form svelte-sfqy0y mt-8 flex justify-between"
-              style={{ flexGrow: 2, minWidth: "min(320px, 100%)" }}
-            >
+            {/* Second Section */}
+            <div id="component-7" className="svelte-15lo0d8 stretch">
               <div
-                id="component-8"
-                className="svelte-90oupt border rounded-md p-2"
+                className="form svelte-sfqy0y mt-8 flex justify-between"
+                style={{ flexGrow: 2, minWidth: "min(320px, 100%)" }}
               >
                 <div
-                  className="wrap default full svelte-zlszon hide"
-                  style={{ position: "absolute", padding: "0px" }}
-                ></div>
+                  id="component-8"
+                  className="svelte-90oupt border rounded-md p-2"
+                  style={{ width: "-webkit-fill-available" }}
+                >
+                  <div
+                    className="wrap default full svelte-zlszon hide"
+                    style={{ position: "absolute", padding: "0px" }}
+                  ></div>
 
-                <div className="wrap svelte-1cl284s justify-between">
-                  <div className="head svelte-1cl284s ">
-                    <label htmlFor="range_id_0">
-                      <span data-testid="block-info" className="svelte-1gfkn6j">
-                        Guidance Scale
-                      </span>
-                    </label>
-                    <input
-                      data-testid="number-input"
-                      type="number"
-                      min="1"
-                      max="15"
-                      step="0.25"
+                  <div className="wrap svelte-1cl284s justify-between">
+                    <div className="head svelte-1cl284s ">
+                      <label htmlFor="range_id_0">
+                        <span
+                          data-testid="block-info"
+                          className="svelte-1gfkn6j"
+                        >
+                          Guidance Scale
+                        </span>
+                      </label>
+                      <input
+                        data-testid="number-input"
+                        type="number"
+                        min="1"
+                        max="15"
+                        step="0.25"
+                          value={guidanceScale}
+                          onChange={handleGuidanceScaleChange}
+                        className="svelte-1cl284s float-right border rounded-md"
+                      />
+                    </div>
+                  </div>
+
+                  <input
+                    type="range"
+                    min="1"
+                    max="15"
+                    step="0.25"
                       value={guidanceScale}
                       onChange={handleGuidanceScaleChange}
-                      className="svelte-1cl284s"
-                    />
-                  </div>
+                    className="svelte-1cl284s"
+                    style={{ width: "-webkit-fill-available" }}
+                  />
                 </div>
-
-                <input
-                  type="range"
-                  min="1"
-                  max="15"
-                  step="0.25"
-                  value={guidanceScale}
-                  onChange={handleGuidanceScaleChange}
-                  className="svelte-1cl284s"
-                />
-              </div>
-              <div
-                id="component-9"
-                className="svelte-90oupt border rounded-md p-2"
-              >
                 <div
-                  className="wrap default full svelte-zlszon hide"
-                  style={{ position: "absolute", padding: "0px" }}
-                ></div>
-                <div className="wrap svelte-1cl284s">
-                  <div className="head svelte-1cl284s">
-                    <label htmlFor="range_id_1">
-                      <span data-testid="block-info" className="svelte-1gfkn6j">
-                        Steps
-                      </span>
-                    </label>
-                    <input
-                      data-testid="number-input"
-                      type="number"
-                      min="25"
-                      max="100"
-                      step="5"
+                  id="component-9"
+                  className="svelte-90oupt border rounded-md p-2"
+                  style={{ width: "-webkit-fill-available" }}
+                >
+                  <div
+                    className="wrap default full svelte-zlszon hide"
+                    style={{ position: "absolute", padding: "0px" }}
+                  ></div>
+                  <div className="wrap svelte-1cl284s">
+                    <div className="head svelte-1cl284s">
+                      <label htmlFor="range_id_1">
+                        <span
+                          data-testid="block-info"
+                          className="svelte-1gfkn6j"
+                        >
+                          Steps
+                        </span>
+                      </label>
+                      <input
+                        data-testid="number-input"
+                        type="number"
+                        min="25"
+                        max="100"
+                        step="5"
+                          value={steps}
+                          onChange={handleStepsChange}
+                        className="svelte-1cl284s float-right border rounded-md"
+                      />
+                    </div>
+                  </div>
+                  <input
+                    type="range"
+                    min="25"
+                    max="100"
+                    step="5"
                       value={steps}
                       onChange={handleStepsChange}
-                      className="svelte-1cl284s"
-                    />
-                  </div>
+                    className="svelte-1cl284s"
+                    style={{ width: "-webkit-fill-available" }}
+                  />
                 </div>
-                <input
-                  type="range"
-                  min="25"
-                  max="100"
-                  step="5"
-                  value={steps}
-                  onChange={handleStepsChange}
-                  className="svelte-1cl284s"
-                />
               </div>
             </div>
-          </div>
-          {/* Second Section */}
-          {/* Third Section */}
-          <div id="component-7" className="svelte-15lo0d8 stretch">
-            <div
-              className="form svelte-sfqy0y mt-8 flex justify-between"
-              style={{ flexGrow: 2, minWidth: "min(320px, 100%)" }}
-            >
+            {/* Second Section */}
+            {/* Third Section */}
+            <div id="component-7" className="svelte-15lo0d8 stretch">
               <div
-                id="component-8"
-                className="svelte-90oupt border rounded-md p-2"
+                className="form svelte-sfqy0y mt-8 flex justify-between"
+                style={{ flexGrow: 2, minWidth: "min(320px, 100%)" }}
               >
                 <div
-                  className="wrap default full svelte-zlszon hide"
-                  style={{ position: "absolute", padding: "0px" }}
-                ></div>
+                  id="component-8"
+                  className="svelte-90oupt border rounded-md p-2"
+                  style={{ width: "-webkit-fill-available" }}
+                >
+                  <div
+                    className="wrap default full svelte-zlszon hide"
+                    style={{ position: "absolute", padding: "0px" }}
+                  ></div>
 
-                <div className="wrap svelte-1cl284s justify-between">
-                  <div className="head svelte-1cl284s ">
-                    <label htmlFor="range_id_0">
-                      <span data-testid="block-info" className="svelte-1gfkn6j">
-                        Seed
-                      </span>
-                    </label>
-                    <input
-                      data-testid="number-input"
-                      type="number"
-                      min="1"
-                      max="1000000000000000000"
-                      step="1"
-                      className="svelte-1cl284s"
+                  <div className="wrap svelte-1cl284s justify-between">
+                    <div className="head svelte-1cl284s ">
+                      <label htmlFor="range_id_0">
+                        <span
+                          data-testid="block-info"
+                          className="svelte-1gfkn6j"
+                        >
+                          Seed
+                        </span>
+                      </label>
+                      <input
+                        data-testid="number-input"
+                        type="number"
+                        min="1"
+                        max="1000000000000000000"
+                        step="1"
+                        className="svelte-1cl284s float-right border rounded-md"
+                          value={seed}
+                          onChange={handleSeedChange}
+                      />
+                    </div>
+                  </div>
+
+                  <input
+                    type="range"
+                    min="1"
+                    max="1000000000000000000"
+                    step="1"
+                    className="svelte-1cl284s"
                       value={seed}
                       onChange={handleSeedChange}
-                    />
-                  </div>
+                    style={{ width: "-webkit-fill-available" }}
+                  />
                 </div>
-
-                <input
-                  type="range"
-                  min="1"
-                  max="1000000000000000000"
-                  step="1"
-                  className="svelte-1cl284s"
-                  value={seed}
-                  onChange={handleSeedChange}
-                />
+              </div>
+            </div>
+            {/* Third Section */}
+            <div className="mt-10 mb-2">
+              <div className="button-container border rounded-md p-2">
+                <button className="button" onClick={handleClearClick}>Clear🧹</button>
+                <button className="button" onClick={handleGenerateClick}>Generate 🚀</button>
               </div>
             </div>
           </div>
-          {/* Third Section */}
-          <div className="mt-10 mb-2">
-            <div className="button-container">
-              <button className="button" onClick={handleClearClick}>
-                Clear🧹
-              </button>
-              <button className="button" onClick={handleGenerateClick}>
-                Generate 🚀
-              </button>
+        </div>
+        {/* First Box */}
+        {/* Second Box */}
+        <div className="w-full md:w-1/2 p-4">
+          <div className="col-span-3">
+            <div className="flexh-screen">
+              <div className="border h-auto p-8 rounded-lg shadow-md  items-center justify-center ">
+                {isLoading ? (
+                  <>
+                    <div className="loading-spinner-container">
+                      <div className="loading-spinner"></div>
+                    </div>
+                  </>
+                ) : (
+                  <img
+                    src={result}
+                    alt="Image Icon"
+                    className="w-full h-auto mx-auto"
+                  />
+               )} 
+              </div>
             </div>
           </div>
         </div>
-        {/* First Part with first Section */}
-
-        {/* Second Part */}
-        <div className="col-span-3">
-          <div className="flexh-screen">
-            <div className="border h-auto p-8 rounded-lg shadow-md  items-center justify-center ">
-              {isLoading ? (
-                <>
-                  <div className="loading-spinner-container">
-                    <div className="loading-spinner"></div>
-                  </div>
-                </>
-              ) : (
-                <img
-                  src={result}
-                  alt="Image Icon"
-                  className="w-32 h-full mx-auto"
-                />
-              )}
-            </div>
-          </div>
-        </div>
+        {/* Second Box */}
       </div>
-    </div>
+    </main>
   );
 }
